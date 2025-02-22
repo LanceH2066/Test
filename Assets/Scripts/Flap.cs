@@ -11,6 +11,15 @@ public class Flap : MonoBehaviour
     public PipeSpawner pipeSpawner;
     private Animator  animator;
     bool isDead = false;
+    [SerializeField]
+    private AudioClip flapSound;
+    [SerializeField]
+    private AudioClip hitSound;
+    [SerializeField]
+    private AudioClip pointSound;
+    [SerializeField]
+    private AudioClip deadSound;
+
     private void Awake()
     {
         controls = new InputSystem_Actions();
@@ -31,33 +40,45 @@ public class Flap : MonoBehaviour
     private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        AudioSource.PlayClipAtPoint(flapSound, Vector2.zero);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Pipe"))
+        if(other.CompareTag("Pipe") && !isDead)     // Not dead & hit pipe
         {
             controls.Disable();
             rb.linearVelocityX = 0f;
             animator.enabled = false;
             isDead = true;
+            AudioSource.PlayClipAtPoint(hitSound, transform.position);
         }
-        else if(!isDead)
+        else if(!isDead && other.CompareTag("Point"))   // Not dead & hit middle
         {
             score++;
             text.text = score + "";
+            AudioSource.PlayClipAtPoint(pointSound, transform.position);
+        }
+        else if(isDead && other.CompareTag("Ground"))   // Dead and hit ground
+        {
+            Time.timeScale = 0f;
+            pipeSpawner.gameOver();
+            animator.enabled = false;
+            AudioSource.PlayClipAtPoint(deadSound, transform.position);
+        }
+        else if(!isDead && other.CompareTag("Ground"))  // Not dead but fall into ground
+        {
+            AudioSource.PlayClipAtPoint(hitSound, transform.position);
+            Time.timeScale = 0f;
+            pipeSpawner.gameOver();
+            animator.enabled = false;
+            AudioSource.PlayClipAtPoint(deadSound, transform.position);
         }
     }
 
     private void FixedUpdate()
     {
         RotateBird();
-        if(gameObject.transform.position.y <= -3.25f)
-        {
-            Time.timeScale = 0f;
-            pipeSpawner.gameOver();
-            animator.enabled = false;
-        }
     }
 
     private void RotateBird()

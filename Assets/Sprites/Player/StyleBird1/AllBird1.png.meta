@@ -135,6 +135,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -459,7 +485,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AllBird1_0: 5539577999891845573
+      AllBird1_1: -3999765963290072265
+      AllBird1_10: -7341173578510498608
+      AllBird1_11: 1716879131424119955
+      AllBird1_12: -4100747111529431224
+      AllBird1_13: -4989849783246049853
+      AllBird1_2: 811993791851207881
+      AllBird1_3: 4560692949185054813
+      AllBird1_4: 2907388286743782911
+      AllBird1_5: 6585124905913533040
+      AllBird1_6: -2369845274116926125
+      AllBird1_7: 8497097008640872164
+      AllBird1_8: -1222994656812247986
+      AllBird1_9: -7467458542149876733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

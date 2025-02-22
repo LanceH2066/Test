@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Pipe
+  - Ground
+  - Point
   layers:
   - Default
   - TransparentFX
