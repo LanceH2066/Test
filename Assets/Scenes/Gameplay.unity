@@ -284,7 +284,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 2118005143}
   mainMenuScreen: {fileID: 336380832}
   pipe: {fileID: 8798474614854662510, guid: 7e56e5d8577ecb24db659045525c5b05, type: 3}
-  spawnTimer: 50
+  spawnTimer: 60
   isGameOver: 0
   bird: {fileID: 264592694}
   overlayText: {fileID: 2014955985}
